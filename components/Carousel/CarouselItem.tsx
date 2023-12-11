@@ -4,9 +4,12 @@ export interface CardProps {
   index: number;
   activeIndex: number;
   children?: React.ReactNode;
+  blog: any;
 }
 
-export default function CarouselItem({ index, activeIndex, children }: CardProps) {
+export default function CarouselItem({ index, activeIndex, children, blog }: CardProps) {
+  const hostName: string = 'https://' + blog.contentHost.hostName
+  console.log('blog:', blog)
   const [scaled, setScaled] = useState<Boolean>(false);
 
   const offset = (index - activeIndex) / 4;
@@ -74,12 +77,12 @@ export default function CarouselItem({ index, activeIndex, children }: CardProps
           left: "12%",
           transform: "translate(-50%, -50%)"
         }}>
-        <img src="https://demo.dotcms.com/dA/f851e34ad1/profilePhoto/john-smith.jpg?language_id=1" alt="" className="z-10 h-10 w-10 rounded-full bg-gray-100" />
-        <div className="text-xs leading-6 bg-white rounded-[8px] -ml-10 pl-6 pr-1 py-1 opacity-50">
+        <img src={hostName + blog.author[0].titleImage.idPath} alt="" className="z-10 h-10 w-10 rounded-full bg-gray-100" />
+        <div className="text-xs leading-6 bg-white rounded-[8px] -ml-10 pl-7 pr-1 py-1 opacity-50">
           <p className="font-medium text-bg">
             <a href=''>
               <span className="absolute inset-0 opacity-100" />
-              John Smith
+              {blog.author[0].firstName} {blog.author[0].lastName}
             </a>
           </p>
         </div>

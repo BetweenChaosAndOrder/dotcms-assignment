@@ -8,10 +8,15 @@ import { IoIosArrowBack } from 'react-icons/io';
 export interface CarouselProps {
   width?: number;
   height?: number;
-  items: React.ReactNode[];
+  items: {
+    img: React.ReactNode[],
+    blog: any
+  };
+  blog: any;
 }
 
-export default function Carousel({ width, height, items }: CarouselProps) {
+export default function Carousel({ width, height, items, blog }: CarouselProps) {
+  console.log('blog:', blog)
   const [activeIndex, setActiveIndex] = useState<number>(0);
 
   function handleNextItemBtn() {
@@ -37,8 +42,8 @@ export default function Carousel({ width, height, items }: CarouselProps) {
         </button>
       )}
       {items?.map((item, index) => (
-        <CarouselItem key={index} index={index} activeIndex={activeIndex}>
-          {item}
+        <CarouselItem key={index} index={index} blog={item.blog} activeIndex={activeIndex}>
+          {item.img}
         </CarouselItem>
       ))}
       {activeIndex < items.length - 1 && (

@@ -57,9 +57,10 @@ const Home: NextPage = ({blog, baseURL}: any) => {
   let images: any = []
   blog.BlogCollection.forEach((element: any) => {
     console.log('https://' + element.contentHost.hostName + element.image.idPath)
-    images.push(
-      <img className="h-full w-full object-cover" src={'https://' + element.contentHost.hostName + element.image.idPath} alt="teste" />
-    )
+    images.push({
+      img: <img className="h-full w-full object-cover" src={'https://' + element.contentHost.hostName + element.image.idPath} alt="teste" />,
+      blog: element
+    })
   });
   console.log(images)
   return (
