@@ -37,7 +37,7 @@
   }
 
   .carousel-container {
-    @apply relative h-32 w-3/6 sm:h-40 md:h-56;
+    @apply relative h-32 w-3/6 sm:h-40 md:h-96;
     perspective: 450px;
     transform-style: preserve-3d;
   }

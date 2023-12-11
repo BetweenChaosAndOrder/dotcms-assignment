@@ -42,6 +42,18 @@ export default function CarouselItem({ index, activeIndex, children }: CardProps
       }}
     >
       {children}
+
+      <div
+        className="relative z-10 opacity-70 rounded-[15px] bg-bg text-white px-3 py-1.5 font-medium text-gray-50 hover:bg-gray-800"
+        style={{
+          position: "absolute",
+          top: "90%",
+          left: "50%",
+          transform: "translate(-50%, -50%)"
+        }}
+      >
+          Easy Snowboard Tricks You can Start Using Right Away
+      </div>
     </div>
   );
 }
