@@ -47,27 +47,27 @@ export default function CarouselItem({ index, activeIndex, children, blog }: Car
       {children}
 
       <div
-        className="relative z-10 opacity-70 rounded-[15px] bg-bg text-xs text-white px-3 py-1.5 font-medium text-gray-50 hover:bg-gray-800"
+        className="relative z-10 opacity-50 rounded-[15px] bg-white text-xs text-bg px-3 py-1.5 font-medium text-gray-50 hover:bg-gray-800"
         style={{
           position: "absolute",
           top: "7%",
-          right: "-11%",
+          right: "-3%",
           transform: "translate(-50%, -50%)"
         }}
       >
-          Thu Sep 19 21:59:00 UTC 2019
+          {blog.tags[0]}
       </div>
 
       <div
-        className="relative z-10 opacity-70 rounded-[15px] bg-bg text-white px-3 py-1.5 font-medium text-gray-50 hover:bg-gray-800"
+        className="w-full relative z-10 text-small leading-6 bg-gray-300 p-2 opacity-80 text-bg font-medium"
         style={{
           position: "absolute",
-          top: "90%",
+          top: "95%",
           left: "50%",
           transform: "translate(-50%, -50%)"
         }}
       >
-          Easy Snowboard Tricks You can Start Using Right Away
+          {blog.title}
       </div>
 
       <div className="relative mt-8 flex items-center gap-x-4 p-2"
