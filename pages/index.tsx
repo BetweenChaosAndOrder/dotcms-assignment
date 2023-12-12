@@ -8,9 +8,7 @@ import BlogListing from '../components/BlogListing';
 
 export const getStaticProps: GetStaticProps = async () => {
 
-  const endpoint = process.env.DOTCMS_GRAPHQL_ENDPOINT as string;
-
-  const graphQLClient = new GraphQLClient(endpoint)
+  const graphQLClient = new GraphQLClient('https://demo.dotcms.com/api/v1/graphql')
   graphQLClient.setHeader('X-GQL-Token', process.env.DOTCMS_API_TOKEN as string)
 
   const query = gql`
