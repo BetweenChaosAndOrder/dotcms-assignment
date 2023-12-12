@@ -56,7 +56,7 @@ export default function Carousel({ width, height, items, blog, handleSelectedBlo
       <CarouselIndicator
         activeIndex={activeIndex}
         length={items.length}
-        onSetActiveIndex={(activeIndex) => {
+        onSetActiveIndex={(activeIndex: any) => {
           setActiveIndex(activeIndex);
         }}
       />
