@@ -5,18 +5,8 @@ import CarouselIndicator from './CarouselIndicator';
 
 import { IoIosArrowBack } from 'react-icons/io';
 
-export interface CarouselProps {
-  width?: number;
-  height?: number;
-  items: {
-    img: React.ReactNode[],
-    blog: any
-  };
-  blog: any;
-  handleSelectedBlog: (blogSelected: any) => void
-}
 
-export default function Carousel({ width, height, items, blog, handleSelectedBlog }: CarouselProps) {
+export default function Carousel({ width, height, items, blog, handleSelectedBlog }: any) {
   console.log('blog:', blog)
   const [activeIndex, setActiveIndex] = useState<number>(0);
 
