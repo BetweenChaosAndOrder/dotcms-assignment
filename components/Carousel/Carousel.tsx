@@ -5,7 +5,6 @@ import CarouselIndicator from './CarouselIndicator';
 
 import { IoIosArrowBack } from 'react-icons/io';
 
-
 export default function Carousel({ width, height, items, blog, handleSelectedBlog }: any) {
   console.log('blog:', blog)
   const [activeIndex, setActiveIndex] = useState<number>(0);
@@ -36,7 +35,7 @@ export default function Carousel({ width, height, items, blog, handleSelectedBlo
           <IoIosArrowBack />
         </button>
       )}
-      {items?.map((item, index) => (
+      {items?.map((item: any, index: number) => (
         <CarouselItem handleSelectedItem={handleSelectedItem} key={index} index={index} blog={item.blog} activeIndex={activeIndex}>
           {item.img}
         </CarouselItem>

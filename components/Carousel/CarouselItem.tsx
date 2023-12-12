@@ -1,14 +1,6 @@
 import React, { useState } from 'react';
 
-export interface CardProps {
-  index: number;
-  activeIndex: number;
-  children?: React.ReactNode;
-  blog: any;
-  handleSelectedItem: any;
-}
-
-export default function CarouselItem({ index, activeIndex, children, blog, handleSelectedItem }: CardProps) {
+export default function CarouselItem({ index, activeIndex, children, blog, handleSelectedItem }: any) {
   const hostName: string = 'https://' + blog.contentHost.hostName
   console.log('blog:', blog)
 
