@@ -2,7 +2,9 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 
-First, run the development server:
+First, add the .env file forwarded to Rocio to the root of the project directory.
+
+Run the development server:
 
 ```bash
 npm run dev
