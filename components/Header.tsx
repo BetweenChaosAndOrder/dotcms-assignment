@@ -20,15 +20,12 @@ export default function Header() {
         </a>
         <a href="" className="header-link-item">Destination</a>
         <a href="" className="header-link-item">
-          Store{' '}
-          <span className="ml-1 rounded-[4px] bg-gradient-to-r from-[#9217d8] via-[#8515e0] to-[#7213f1] px-1">
-            new
-          </span>
+          Store
         </a>
         <a href="" className="header-link-item">Members Only</a>
         <button
           className="rounded-md border-x-2 border-y-2 border-solid 
-         border-blue-500 px-7 py-2 text-xs font-medium text-blue-500 transition-all duration-300 hover:bg-blue-500 hover:text-white hover:opacity-75"
+         border-[#FCA05A] px-7 py-2 text-xs font-medium text-[#FCA05A] transition-all duration-300 hover:bg-[#FCA05A] hover:text-white hover:opacity-75"
         >
           Contact Us
         </button>

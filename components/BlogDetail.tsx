@@ -18,10 +18,10 @@ const BlogDetail = ({ post }: any) => {
                 <div className="px-6 lg:contents">
                     <div className="mx-auto max-w-2xl pb-24 pt-16 sm:pb-32 sm:pt-20 lg:ml-8 lg:mr-0 lg:w-full lg:max-w-lg lg:flex-none lg:pt-32 xl:w-1/2">
                         <div className='flex'>
-                            <div className="mr-1 z-10 rounded-full bg-indigo-600 px-3 py-1.5 font-medium text-white">
+                            <div className="mr-1 z-10 rounded-full bg-[#FCA05A] px-3 py-1.5 font-medium text-white">
                                 {post.tags[0]}
                             </div>
-                            <div className={(post.tags[1] != undefined ? "mr-1 z-10 rounded-full bg-indigo-600 px-3 py-1.5 font-medium text-white": 'hidden')}>
+                            <div className={(post.tags[1] != undefined ? "mr-1 z-10 rounded-full bg-[#FCA05A] px-3 py-1.5 font-medium text-white": 'hidden')}>
                                 {post.tags[1]}
                             </div>
                         </div>

@@ -2,7 +2,6 @@ import type { GetStaticProps, NextPage } from 'next';
 import { GraphQLClient, gql } from 'graphql-request'
 import Head from 'next/head';
 import Header from '../components/Header';
-import Carousel from '../components/Carousel/Carousel';
 
 import BlogListing from '../components/BlogListing';
 
@@ -49,9 +48,8 @@ export const getStaticProps: GetStaticProps = async () => {
 }
 
 const Home: NextPage = ({ blog }: any) => {
-  console.log('blog:',blog)
   return (
-    <div className="bg-bg text-white">
+    <div className="text-[#4F6C83]">
       <Head>
         <title>Travel Blog</title>
         <link rel="icon" href="favicon.ico" />

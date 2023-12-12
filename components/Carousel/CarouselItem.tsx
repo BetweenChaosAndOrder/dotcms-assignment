@@ -38,7 +38,7 @@ export default function CarouselItem({ index, activeIndex, children, blog, handl
       {children}
 
       <div
-        className="relative z-10 opacity-50 rounded-[15px] bg-white text-xs text-bg px-3 py-1.5 font-medium text-gray-50 hover:bg-gray-200"
+        className="relative z-10 opacity-50 rounded-[10px] bg-white text-xs text-bg px-3 py-1.5 font-medium text-[#4F6C83] hover:bg-indigo-200"
         style={{
           position: "absolute",
           top: "7%",
