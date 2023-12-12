@@ -13,7 +13,7 @@ export interface CarouselProps {
     blog: any
   };
   blog: any;
-  handleSelectedBlog: any
+  handleSelectedBlog: (blogSelected: any) => void
 }
 
 export default function Carousel({ width, height, items, blog, handleSelectedBlog }: CarouselProps) {
