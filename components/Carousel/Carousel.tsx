@@ -13,9 +13,10 @@ export interface CarouselProps {
     blog: any
   };
   blog: any;
+  handleSelectedBlog: any
 }
 
-export default function Carousel({ width, height, items, blog }: CarouselProps) {
+export default function Carousel({ width, height, items, blog, handleSelectedBlog }: CarouselProps) {
   console.log('blog:', blog)
   const [activeIndex, setActiveIndex] = useState<number>(0);
 
@@ -31,6 +32,10 @@ export default function Carousel({ width, height, items, blog }: CarouselProps) 
     });
   }
 
+  function handleSelectedItem(blog: any) {
+    handleSelectedBlog(blog)
+  }
+
   return (
     <div className="carousel-container">
       {activeIndex > 0 && (
@@ -42,7 +47,7 @@ export default function Carousel({ width, height, items, blog }: CarouselProps) 
         </button>
       )}
       {items?.map((item, index) => (
-        <CarouselItem key={index} index={index} blog={item.blog} activeIndex={activeIndex}>
+        <CarouselItem handleSelectedItem={handleSelectedItem} key={index} index={index} blog={item.blog} activeIndex={activeIndex}>
           {item.img}
         </CarouselItem>
       ))}

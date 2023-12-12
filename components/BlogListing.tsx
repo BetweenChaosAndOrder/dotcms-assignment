@@ -12,7 +12,11 @@ const BlogListing = ({ blog }: any) => {
         })
     });
 
-    const [selectedBlog, setSelectedBlog] = useState<number | undefined>();
+    const [selectedBlog, setSelectedBlog] = useState<any | undefined>();
+
+    function handleSelectedBlog(blogSelected: any) {
+        setSelectedBlog(blogSelected)
+    }
     
     if (selectedBlog === undefined) {
         return (
@@ -25,14 +29,14 @@ const BlogListing = ({ blog }: any) => {
                         recommendations that will inspire, excite you, and help you make the best desition s for planning your next adventure.
                         </p>
                     </div>
-                    <Carousel items={images} />
+                    <Carousel items={images} handleSelectedBlog={handleSelectedBlog} />
                 </div>
             </div>
         )
     } else {
         return (
             <div>
-                <BlogDetail post={blog.BlogCollection[0]} />
+                <BlogDetail post={selectedBlog} />
             </div>
         )
     }

@@ -5,9 +5,10 @@ export interface CardProps {
   activeIndex: number;
   children?: React.ReactNode;
   blog: any;
+  handleSelectedItem: any;
 }
 
-export default function CarouselItem({ index, activeIndex, children, blog }: CardProps) {
+export default function CarouselItem({ index, activeIndex, children, blog, handleSelectedItem }: CardProps) {
   const hostName: string = 'https://' + blog.contentHost.hostName
   console.log('blog:', blog)
 
@@ -37,6 +38,9 @@ export default function CarouselItem({ index, activeIndex, children, blog }: Car
         transform: cssTransformProperties,
         opacity: cssOpacity,
         display: cssDisplay,
+      }}
+      onClick={() => {
+        handleSelectedItem(blog);
       }}
     >
       {children}
