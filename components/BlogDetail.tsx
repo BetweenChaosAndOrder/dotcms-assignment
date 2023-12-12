@@ -10,7 +10,7 @@ const BlogDetail = ({ post }: any) => {
                     <div className="relative h-80 lg:-ml-8 lg:h-auto lg:w-full lg:grow xl:ml-0">
                         <img 
                             className="absolute inset-0 h-full w-full bg-gray-50 object-cover" 
-                            src={hostName + post.image.idPath} 
+                            src={hostName + post.image.idPath}
                             alt="" 
                         />
                     </div>
@@ -74,6 +74,38 @@ const BlogDetail = ({ post }: any) => {
                                 }
                             })}
 
+                            <div className="bg-white">
+                                <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
+                                    <div className="grid grid-cols-1 gap-y-4 sm:grid-cols-2 sm:gap-x-6 sm:gap-y-10 lg:grid-cols-1 lg:gap-x-8">
+                                        {post.blogContent.json.content?.map((content: any, index: number) => {
+                                            if(content.type === 'dotContent') {
+                                                return (
+                                                    <div className="group relative flex flex-col overflow-hidden rounded-lg border border-gray-200 bg-white">
+                                                        <div className="aspect-h-4 aspect-w-3 bg-gray-200 sm:aspect-none group-hover:opacity-75 sm:h-96">
+                                                            <img 
+                                                                src={hostName + content.attrs.data.image}
+                                                                alt={content.attrs.data.title}
+                                                                className="h-full w-full object-cover object-center sm:h-full sm:w-full" />
+                                                        </div>
+                                                        <div className="flex flex-1 flex-col space-y-2 p-4">
+                                                            <h3 className="text-sm font-medium text-gray-900">
+                                                                <a href="#">
+                                                                    <span aria-hidden="true" className="absolute inset-0"></span>
+                                                                    {content.attrs.data.title}
+                                                                </a>
+                                                            </h3>
+                                                            <p className="text-sm text-gray-500 truncate">{content.attrs.data.description}</p>
+                                                            <div className="flex flex-1 flex-col justify-end">
+                                                                <p className="text-base font-medium text-gray-900">${content.attrs.data.retailPrice}</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                )
+                                            }
+                                        })}
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
